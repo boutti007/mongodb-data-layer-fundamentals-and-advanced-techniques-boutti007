@@ -1,0 +1,53 @@
+# PLP Bookstore — MongoDB Week 1 Assignment
+
+This repository contains scripts and queries for the "MongoDB – Data Layer Fundamentals and Advanced Techniques" assignment.
+
+Contents
+- `insert_books.js` — Node script that inserts sample book documents into the `plp_bookstore` database, `books` collection.
+- `queries.js` — Node script that runs all required CRUD operations, advanced queries, aggregation pipelines, and index performance checks.
+- (You should add) `screenshot.png` — A screenshot of MongoDB Compass or Atlas showing the collection and sample data (add this file before committing).
+
+Prerequisites
+- Node.js (v14+ recommended)
+- npm
+- MongoDB: either a local MongoDB server (default) or a MongoDB Atlas connection string.
+
+Setup
+1. Clone your GitHub Classroom repository (the one created for this assignment).
+2. Copy these files into the repository root.
+
+Install dependencies
+- In the repo directory run:
+  npm install mongodb
+
+Configuration
+- By default the scripts connect to `mongodb://localhost:27017`.
+- To use an Atlas cluster, set the environment variable `MONGODB_URI`:
+  - Linux/macOS:
+    export MONGODB_URI="your_atlas_connection_string"
+  - Windows (PowerShell):
+    $env:MONGODB_URI="your_atlas_connection_string"
+
+Running
+1. Insert sample books:
+   node insert_books.js
+   - This creates the `plp_bookstore` database and `books` collection (if they don't exist) and inserts the sample documents.
+
+2. Run all queries, aggregations, and indexing examples:
+   node queries.js
+   - This script connects to the same database and runs:
+     - Basic CRUD examples (find, update, delete)
+     - Advanced queries with projection, sort, pagination
+     - Aggregation pipelines (avg price by genre, author with most books, group by decade)
+     - Index creation and explain() before/after to demonstrate performance
+
+What to submit
+- Commit and push the following files:
+  - `insert_books.js`
+  - `queries.js`
+  - `README.md`
+  - `screenshot.png` (a screenshot of MongoDB Compass or Atlas showing sample data)
+
+Notes
+- The scripts are written using the official `mongodb` Node.js driver and `async`/`await`.
+- The scripts print results to the console so you can capture outputs for grading or debugging.
